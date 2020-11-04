@@ -2,37 +2,31 @@ import React, { Component } from 'react';
 import { Form, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FaBitcoin } from 'react-icons/all';
 
-class BuyForm extends Component {
-    constructor(props) {
-        super(props);
+class SellForm extends Component {
+    initialState = {
+        quantity: ""
+    };
 
-        this.initialState = {
-            quantity: ''
-        };
+    state = this.initialState;
 
-        this.state = this.initialState;
-    }
-
-    handleChange = event => {
+    handleChange = (event) => {
         const { name, value } = event.target;
 
         this.setState({
-            [name] : value
+            [name]: value
         });
-    }
+    };
 
-    onBuyCoins = (event) => {
-        event.preventDefault();
-
+    sellCoins = () => {
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
-    }
+    };
 
     render() {
         const { quantity } = this.state;
 
         return (
-            <Form.Row className="align-items-center" onSubmit={this.onBuyCoins}>
+            <Form.Row className="align-items-center" onSubmit={this.sellCoins}>
                 <Col xs="auto">
                     <Form.Label htmlFor="inlineFormInputGroup" srOnly>
                         Quantity
@@ -48,15 +42,14 @@ class BuyForm extends Component {
                             type="number"
                             name="quantity"
                             id="quantity"
-                            required
                             value={quantity}
                             onChange={this.handleChange}
                         />
                     </InputGroup>
                 </Col>
                 <Col xs="auto">
-                    <Button type="submit" className="mb-2">
-                        Buy now
+                    <Button type="submit" variant={"secondary"} className="mb-2">
+                        Sell
                     </Button>
                 </Col>
             </Form.Row>
@@ -64,4 +57,4 @@ class BuyForm extends Component {
     }
 }
 
-export default BuyForm;
+export default SellForm;

@@ -21,11 +21,11 @@ class CryptoChart extends Component {
                 title: "States"
             },
             axisY: {
-                title: "Units Sold",
-                titleFontColor: "#6D78AD",
-                lineColor: "#6D78AD",
-                labelFontColor: "#6D78AD",
-                tickColor: "#6D78AD"
+                title: "Sold",
+                titleFontColor: "#007bff",
+                lineColor: "#007bff",
+                labelFontColor: "#007bff",
+                tickColor: "#007bff"
             },
             axisY2: {
                 title: "Profit in USD",
@@ -92,7 +92,6 @@ class CryptoChart extends Component {
                 <CanvasJSChart options = {options}
                                onRef={ref => this.chart = ref}
                 />
-                {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
             </div>
         );
     }
