@@ -2,17 +2,10 @@
   {
     "id":1,
     "name":"Bitcoin",
+    "price": "1000",
+    "old_price":"999",
     "info":"The most famous one",
-    "created_at":"2018-09-18T16:39:22.184Z",
-    "updated_at":"2018-09-18T16:39:22.184Z",
-    "value_old":"30","value_new":"60"
-  },
-  {
-    "id":2,
-    "name":"Ent",
-    "info":"Another one",
-    "created_at":"2018-09-18T16:39:22.184Z",
-    "updated_at":"2018-09-18T16:39:22.184Z",
-    "value_old":"10","value_new":"30"
+    "created_at":"2009-01-12T16:39:22.184Z",
+    "updated_at":"2020-24-10T16:39:22.184Z"
   }
 ]

@@ -1,10 +1,15 @@
 import React, {Component} from 'react'
+import { Navbar } from "react-bootstrap";
 
 const UserData = () => {
     return (
-        <div>
-            <p>Username</p>
-        </div>
+        <Navbar>
+            <Navbar.Collapse className="justify-content-end">
+                <Navbar.Text>
+                    Signed in as: <a href="#login">Robine Savert</a>
+                </Navbar.Text>
+            </Navbar.Collapse>
+        </Navbar>
     )
 }
 

@@ -3,11 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 import User from './User';
 import Logo from './Logo';
 import Dashboard from './Dashboard';
-import Header from './Header';
 import TableData from './TableData';
 import FormData from './FormData';
 
-class App extends Component {
+class Header extends Component {
     state = {
         cryptos: [
 
@@ -26,22 +25,17 @@ class App extends Component {
         return (
             <Container>
                 <Row>
-                    <Header />
-                </Row>
-                {/*<Row>*/}
-                {/*    <Col>*/}
-                {/*        <TableData characterData={characters} removeCharacter={this.removeCharacter} />*/}
-                {/*        <FormData handleSubmit={this.handleSubmit} />*/}
-                {/*    </Col>*/}
-                {/*</Row>*/}
-                <Row>
+                    <Col md={3}>
+                        <Logo />
+                    </Col>
                     <Col>
-                        <Dashboard />
+                        <User />
                     </Col>
                 </Row>
+
             </Container>
         )
     }
 }
 
-export default App
+export default Header

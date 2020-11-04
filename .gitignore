@@ -2,7 +2,8 @@
 
 # dependencies
 /node_modules
-/node_modules
+/crypto-backend/node_modules
+/crypto-frontend/node_modules
 
 # testing
 /coverage

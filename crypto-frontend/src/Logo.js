@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
-import ReactLogo from './logo.svg'
+import ReactLogo from './assets/logo.svg'
 
 function Logo() {
     return <Image src={ReactLogo} alt="Logo" />;
