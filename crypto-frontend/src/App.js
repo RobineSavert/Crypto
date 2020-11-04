@@ -5,11 +5,36 @@ import CryptoTable from './components/CryptoTable';
 import CryptoChart from './components/CryptoChart';
 import BuyForm from './BuyForm';
 import SellForm from './SellForm';
+import getData from './utils/get-data'
 
 class App extends Component {
-    handleSubmit = (crypto) => {
-        this.setState({ cryptos: [...this.state.cryptos, crypto] });
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            crypto: {},
+            isLoaded: false,
+            error: false
+        };
+    }
+
+    handleSubmit = (quantity) => {
+        const newQuantity = this.state.crypto.quantity + parseInt(quantity);
+        this.setState({
+            crypto: {
+                ...this.state.crypto,
+                quantity: newQuantity
+            }
+        })
     };
+
+    async componentDidMount() {
+        const crypto = await getData()
+        this.setState({
+            crypto,
+            isLoaded: true
+        })
+    }
 
     render() {
         return (
@@ -19,7 +44,7 @@ class App extends Component {
                 </Row>
                 <Row className="mt-1 mb-3">
                     <Col md={7}>
-                        <CryptoTable />
+                        <CryptoTable crypto={this.state.crypto} error={this.state.error} isLoaded={this.state.isLoaded} />
                     </Col>
                     <Col>
                         <CryptoChart />

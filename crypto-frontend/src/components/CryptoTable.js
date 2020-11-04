@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Table, Spinner, Alert, Container } from 'react-bootstrap';
 
 const TableHeader = () => (
@@ -13,45 +12,27 @@ const TableHeader = () => (
     </thead>
 );
 
-const TableBody = ({ cryptos = [] }) => (
-    <tbody>{cryptos.map((row, index) => (
-        <tr key={index}>
-            <td>{row.name}</td>
-            <td>{row.quantity}</td>
-            <td>{row.price}</td>
-            <td>{row.old_price}</td>
+const TableBody = ({ crypto = {} }) => (
+    <tbody>
+        <tr>
+            <td>{crypto.name}</td>
+            <td>{crypto.quantity}</td>
+            <td>{crypto.price}</td>
+            <td>{crypto.old_price}</td>
         </tr>
-    ))}
     </tbody>
 );
 
-const TableComponent = ({ cryptos = [] }) => (
+const TableComponent = ({ crypto = {} }) => (
     <Container>
         <Table bordered striped>
             <TableHeader />
-            <TableBody cryptos={cryptos} />
+            <TableBody crypto={crypto} />
         </Table>
     </Container>
 );
 
-const App = () => {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [cryptos, setCryptos] = useState([]);
-    const getData = async () => {
-        try {
-            const result = await axios.get('http://localhost:1337/api/crypto');
-            setIsLoaded(true);
-            setCryptos(result.data);
-        } catch (error) {
-            setIsLoaded(true);
-            setError(error);
-        }
-    };
-
-    if (cryptos.length === 0) {
-        getData();
-    }
+const CryptoTable = ({ error, crypto, isLoaded }) => {
 
     if (error) {
         return (
@@ -64,6 +45,7 @@ const App = () => {
             <Spinner animation="border" />
         );
     }
-    return <TableComponent cryptos={cryptos} />
+
+    return <TableComponent crypto={crypto} />
 };
-export default App;
+export default CryptoTable;

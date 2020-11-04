@@ -6,33 +6,28 @@ class BuyForm extends Component {
     constructor(props) {
         super(props);
 
-        this.initialState = {
-            quantity: ''
+        this.state = {
+            quantity: 0
         };
-
-        this.state = this.initialState;
     }
 
     handleChange = event => {
-        const { name, value } = event.target;
+        const { value } = event.target;
 
         this.setState({
-            [name] : value
+            quantity: value
         });
     }
 
-    onBuyCoins = (event) => {
-        event.preventDefault();
-
-        this.props.handleSubmit(this.state);
-        this.setState(this.initialState);
+    handleClick = () => {
+        this.props.handleSubmit(this.state.quantity)
     }
 
     render() {
         const { quantity } = this.state;
 
         return (
-            <Form.Row className="align-items-center" onSubmit={this.onBuyCoins}>
+            <Form.Row className="align-items-center">
                 <Col xs="auto">
                     <Form.Label htmlFor="inlineFormInputGroup" srOnly>
                         Quantity
@@ -55,7 +50,7 @@ class BuyForm extends Component {
                     </InputGroup>
                 </Col>
                 <Col xs="auto">
-                    <Button type="submit" className="mb-2">
+                    <Button type="button" className="mb-2" onClick={this.handleClick}>
                         Buy now
                     </Button>
                 </Col>
