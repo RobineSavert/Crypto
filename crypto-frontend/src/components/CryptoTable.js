@@ -33,7 +33,6 @@ const TableComponent = ({ crypto = {} }) => (
 );
 
 const CryptoTable = ({ error, crypto, isLoaded }) => {
-
     if (error) {
         return (
             <Alert variant={'danger'}>{error.message}</Alert>

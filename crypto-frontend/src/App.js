@@ -58,7 +58,7 @@ class App extends Component {
                                 <BuyForm handleSubmit={this.handleSubmit} />
                             </Col>
                             <Col md={6}>
-                                <SellForm handleSubmit={this.handleSubmit} />
+                                <SellForm  />
                             </Col>
                         </Row>
                     </Col>
