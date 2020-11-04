@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {Table, Spinner, Alert, Button} from 'react-bootstrap';
-import CryptoActions from "./CryptoActions";
+import {Table, Spinner, Alert } from 'react-bootstrap';
 
 const App = () => {
 
@@ -42,26 +41,24 @@ const App = () => {
         );
     } else {
         return (
-            <div className="col">
-                <Table striped bordered>
-                    <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td>Price</td>
-                            <td>Old price</td>
-                            <td>Actions</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> {cryptos.map(crypto => <div>{crypto.name}</div>)}</td>
-                            <td> {cryptos.map(crypto => <div>{crypto.price}</div>)}</td>
-                            <td> {cryptos.map(crypto => <div>{crypto.old_price}</div>)}</td>
-                            <td> <CryptoActions /></td>
-                        </tr>
-                    </tbody>
-                </Table>
-            </div>
+            <Table striped bordered>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Quantity</td>
+                        <td>Price</td>
+                        <td>Old price</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{cryptos.map(crypto => <div key={crypto.name}>{crypto.name}</div>)}</td>
+                        <td>{cryptos.map(crypto => <div key={crypto.quantity}>{crypto.quantity}</div>)}</td>
+                        <td>{cryptos.map(crypto => <div key={crypto.price}>${crypto.price}</div>)}</td>
+                        <td>{cryptos.map(crypto => <div key={crypto.old_price}>${crypto.old_price}</div>)}</td>
+                    </tr>
+                </tbody>
+            </Table>
         );
     }
 }

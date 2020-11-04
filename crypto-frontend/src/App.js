@@ -1,42 +1,38 @@
 import React, {Component} from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import User from './User';
-import Logo from './Logo';
-import Dashboard from './Dashboard';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import Header from './Header';
-import TableData from './TableData';
-import FormData from './FormData';
+import CryptoTable from './components/CryptoTable';
+import CryptoChart from './components/CryptoChart';
+import BuyForm from './BuyForm';
 
 class App extends Component {
-    state = {
-        cryptos: [
-
-        ],
-    }
-
-    handleSubmit = (character) => {
-        this.setState({characters: [...this.state.characters, character]})
-    }
-
-
     render() {
-        // const { characters } = this.state
-        const { cryptos } = this.state
-
         return (
             <Container>
-                <Row>
+                <Row className="mt-2 mb-5">
                     <Header />
                 </Row>
-                {/*<Row>*/}
-                {/*    <Col>*/}
-                {/*        <TableData characterData={characters} removeCharacter={this.removeCharacter} />*/}
-                {/*        <FormData handleSubmit={this.handleSubmit} />*/}
-                {/*    </Col>*/}
-                {/*</Row>*/}
-                <Row>
+                <Row className="mt-1 mb-3">
+                    <Col md={7}>
+                        <CryptoTable />
+                    </Col>
                     <Col>
-                        <Dashboard />
+                        <CryptoChart />
+                    </Col>
+                </Row>
+                <Row className="m-2">
+                    <Col className="text-center">
+                        <hr/>
+                        <Row>
+                            <Col md={6}>
+                                <BuyForm />
+                            </Col>
+                            <Col md={6}>
+                                <Button variant="secondary" size="lg">
+                                    Sell
+                                </Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>
