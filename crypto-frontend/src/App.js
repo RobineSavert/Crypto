@@ -6,6 +6,10 @@ import CryptoChart from './components/CryptoChart';
 import BuyForm from './BuyForm';
 
 class App extends Component {
+    handleSubmit = (crypto) => {
+        this.setState({ cryptos: [...this.state.cryptos, crypto] });
+    };
+
     render() {
         return (
             <Container>
@@ -25,7 +29,7 @@ class App extends Component {
                         <hr/>
                         <Row>
                             <Col md={6}>
-                                <BuyForm />
+                                <BuyForm handleSubmit={this.handleSubmit} />
                             </Col>
                             <Col md={6}>
                                 <Button variant="secondary" size="lg">
