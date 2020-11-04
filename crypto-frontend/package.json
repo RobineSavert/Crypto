@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "crypto-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,6 @@
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "react-scripts": "4.0.0",
-    "victory": "^35.3.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
