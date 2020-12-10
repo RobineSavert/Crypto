@@ -2,8 +2,30 @@ import React, { Component } from 'react';
 import { Form, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FaBitcoin } from 'react-icons/all';
 
-class SellForm extends Component {
+class BuyForm extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: 0
+        };
+    }
+
+    handleChange = event => {
+        const { value } = event.target;
+
+        this.setState({
+            quantity: value
+        });
+    }
+
+    handleClick = () => {
+        this.props.handleSubmit(this.state.quantity)
+    }
+
     render() {
+        const { quantity } = this.state;
+
         return (
             <Form.Row className="align-items-center">
                 <Col xs="auto">
@@ -22,11 +44,13 @@ class SellForm extends Component {
                             name="quantity"
                             id="quantity"
                             required
+                            value={quantity}
+                            onChange={this.handleChange}
                         />
                     </InputGroup>
                 </Col>
                 <Col xs="auto">
-                    <Button disabled type="button" variant={"secondary"} className="mb-2">
+                    <Button type="button" variant={"secondary"} className="mb-2" onClick={this.handleClick}>
                         Sell
                     </Button>
                 </Col>
@@ -35,4 +59,4 @@ class SellForm extends Component {
     }
 }
 
-export default SellForm;
+export default BuyForm;

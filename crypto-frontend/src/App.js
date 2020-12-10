@@ -18,8 +18,18 @@ class App extends Component {
         };
     }
 
-    handleSubmit = (quantity) => {
+    handleSubmitBuy = (quantity) => {
         const newQuantity = this.state.crypto.quantity + parseInt(quantity);
+        this.setState({
+            crypto: {
+                ...this.state.crypto,
+                quantity: newQuantity
+            }
+        })
+    };
+
+    handleSubmitSell = (quantity) => {
+        const newQuantity = this.state.crypto.quantity - parseInt(quantity);
         this.setState({
             crypto: {
                 ...this.state.crypto,
@@ -37,17 +47,22 @@ class App extends Component {
     }
 
     render() {
+        const hasCryptoData = Object.keys(this.state.crypto).length;
+
         return (
             <Container>
                 <Row className="mt-2 mb-5">
-                    <Header />
+                    <Header/>
                 </Row>
                 <Row className="mt-1 mb-3">
                     <Col md={7}>
-                        <CryptoTable crypto={this.state.crypto} error={this.state.error} isLoaded={this.state.isLoaded} />
+                        <CryptoTable crypto={this.state.crypto} error={this.state.error}
+                                     isLoaded={this.state.isLoaded}/>
                     </Col>
                     <Col>
-                        <CryptoChart />
+                        {hasCryptoData &&
+                        <CryptoChart crypto={this.state.crypto}/>
+                        }
                     </Col>
                 </Row>
                 <Row className="m-2">
@@ -55,10 +70,10 @@ class App extends Component {
                         <hr/>
                         <Row>
                             <Col md={6}>
-                                <BuyForm handleSubmit={this.handleSubmit} />
+                                <BuyForm handleSubmit={this.handleSubmitBuy}/>
                             </Col>
                             <Col md={6}>
-                                <SellForm  />
+                                <SellForm handleSubmit={this.handleSubmitSell}/>
                             </Col>
                         </Row>
                     </Col>

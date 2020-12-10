@@ -1,10 +1,82 @@
 {
     "id":1,
     "name":"Bitcoin",
-    "quantity":1,
+    "quantity": 1000,
     "price": 1,
     "old_price":0.99,
     "info":"The most famous one",
-    "created_at":"2009-01-12T16:39:22.184Z",
-    "updated_at":"2020-24-10T16:39:22.184Z"
-  }
+    "archived_data": [
+        {
+            "id": 0,
+            "name": "jan",
+            "sold": 575,
+            "bought": 309
+        },
+        {
+            "id": 1,
+            "name": "feb",
+            "sold": 20,
+            "bought": 345
+        },
+        {
+            "id": 2,
+            "name": "mar",
+            "sold": 235,
+            "bought": 93
+        },
+        {
+            "id": 3,
+            "name": "apr",
+            "sold": 715,
+            "bought": 990
+        },
+        {
+            "id": 4,
+            "name": "may",
+            "sold": 823,
+            "bought": 312
+        },
+        {
+            "id": 5,
+            "name": "jun",
+            "sold": 456,
+            "bought": 894
+        },
+        {
+            "id": 6,
+            "name": "jul",
+            "sold": 220,
+            "bought": 692
+        },
+        {
+            "id": 7,
+            "name": "aug",
+            "sold": 150,
+            "bought": 90
+        },
+        {
+            "id": 8,
+            "name": "sep",
+            "sold": 257,
+            "bought": 816
+        },
+        {
+            "id": 9,
+            "name": "oct",
+            "sold": 98,
+            "bought": 239
+        },
+        {
+            "id": 10,
+            "name": "nov",
+            "sold": 76,
+            "bought": 302
+        },
+        {
+            "id": 11,
+            "name": "dec",
+            "sold": 581,
+            "bought": 869
+        }
+    ]
+}

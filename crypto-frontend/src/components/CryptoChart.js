@@ -28,7 +28,7 @@ class CryptoChart extends Component {
                 tickColor: "#007bff"
             },
             axisY2: {
-                title: "Profit in USD",
+                title: "Bought",
                 titleFontColor: "#51CDA0",
                 lineColor: "#51CDA0",
                 labelFontColor: "#51CDA0",
@@ -46,42 +46,42 @@ class CryptoChart extends Component {
                 name: "Sold",
                 showInLegend: true,
                 xValueFormatString: "MMM YYYY",
-                yValueFormatString: "#,##0 Units",
+                yValueFormatString: "#,##0",
                 dataPoints: [
-                    { x: new Date(2020, 0, 1), y: 120 },
-                    { x: new Date(2020, 1, 1), y: 135 },
-                    { x: new Date(2020, 2, 1), y: 144 },
-                    { x: new Date(2020, 3, 1), y: 103 },
-                    { x: new Date(2020, 4, 1), y: 93 },
-                    { x: new Date(2020, 5, 1), y: 129 },
-                    { x: new Date(2020, 6, 1), y: 143 },
-                    { x: new Date(2020, 7, 1), y: 156 },
-                    { x: new Date(2020, 8, 1), y: 122 },
-                    { x: new Date(2020, 9, 1), y: 106 },
-                    { x: new Date(2020, 10, 1), y: 137 },
-                    { x: new Date(2020, 11, 1), y: 142 }
+                    { x: new Date(2020, 0, 1), y: this.props.crypto.archived_data[0].sold },
+                    { x: new Date(2020, 1, 1), y: this.props.crypto.archived_data[1].sold },
+                    { x: new Date(2020, 2, 1), y: this.props.crypto.archived_data[2].sold },
+                    { x: new Date(2020, 3, 1), y: this.props.crypto.archived_data[3].sold },
+                    { x: new Date(2020, 4, 1), y: this.props.crypto.archived_data[4].sold },
+                    { x: new Date(2020, 5, 1), y: this.props.crypto.archived_data[5].sold },
+                    { x: new Date(2020, 6, 1), y: this.props.crypto.archived_data[6].sold },
+                    { x: new Date(2020, 7, 1), y: this.props.crypto.archived_data[7].sold },
+                    { x: new Date(2020, 8, 1), y: this.props.crypto.archived_data[8].sold },
+                    { x: new Date(2020, 9, 1), y: this.props.crypto.archived_data[9].sold },
+                    { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].sold },
+                    { x: new Date(2020, 11, 1), y: this.props.crypto.archived_data[11].sold }
                 ]
             },
                 {
                     type: "spline",
-                    name: "Profit",
+                    name: "Bought",
                     axisYType: "secondary",
                     showInLegend: true,
                     xValueFormatString: "MMM YYYY",
-                    yValueFormatString: "$#,##0.#",
+                    yValueFormatString: "#,##0.#",
                     dataPoints: [
-                        { x: new Date(2020, 0, 1), y: 19034.5 },
-                        { x: new Date(2020, 1, 1), y: 20015 },
-                        { x: new Date(2020, 2, 1), y: 27342 },
-                        { x: new Date(2020, 3, 1), y: 20088 },
-                        { x: new Date(2020, 4, 1), y: 20234 },
-                        { x: new Date(2020, 5, 1), y: 29034 },
-                        { x: new Date(2020, 6, 1), y: 30487 },
-                        { x: new Date(2020, 7, 1), y: 32523 },
-                        { x: new Date(2020, 8, 1), y: 20234 },
-                        { x: new Date(2020, 9, 1), y: 27234 },
-                        { x: new Date(2020, 10, 1), y: 33548 },
-                        { x: new Date(2020, 11, 1), y: 32534 }
+                        { x: new Date(2020, 0, 1), y: this.props.crypto.archived_data[0].bought },
+                        { x: new Date(2020, 1, 1), y: this.props.crypto.archived_data[1].bought },
+                        { x: new Date(2020, 2, 1), y: this.props.crypto.archived_data[2].bought },
+                        { x: new Date(2020, 3, 1), y: this.props.crypto.archived_data[3].bought },
+                        { x: new Date(2020, 4, 1), y: this.props.crypto.archived_data[4].bought },
+                        { x: new Date(2020, 5, 1), y: this.props.crypto.archived_data[5].bought },
+                        { x: new Date(2020, 6, 1), y: this.props.crypto.archived_data[6].bought },
+                        { x: new Date(2020, 7, 1), y: this.props.crypto.archived_data[7].bought },
+                        { x: new Date(2020, 8, 1), y: this.props.crypto.archived_data[8].bought },
+                        { x: new Date(2020, 9, 1), y: this.props.crypto.archived_data[9].bought },
+                        { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].bought },
+                        { x: new Date(2020, 11, 1), y: this.props.crypto.archived_data[11].bought }
                     ]
                 }]
         }
