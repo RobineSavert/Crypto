@@ -59,7 +59,7 @@ class CryptoChart extends Component {
                     { x: new Date(2020, 8, 1), y: this.props.crypto.archived_data[8].sold },
                     { x: new Date(2020, 9, 1), y: this.props.crypto.archived_data[9].sold },
                     { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].sold },
-                    { x: new Date(2020, 11, 1), y: this.props.crypto.archived_data[11].sold }
+                    { x: new Date(2020, 11, 1), y: this.props.crypto.quantity }
                 ]
             },
                 {
@@ -81,7 +81,7 @@ class CryptoChart extends Component {
                         { x: new Date(2020, 8, 1), y: this.props.crypto.archived_data[8].bought },
                         { x: new Date(2020, 9, 1), y: this.props.crypto.archived_data[9].bought },
                         { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].bought },
-                        { x: new Date(2020, 11, 1), y: this.props.crypto.archived_data[11].bought }
+                        { x: new Date(2020, 11, 1), y: this.props.crypto.quantity },
                     ]
                 }]
         }
