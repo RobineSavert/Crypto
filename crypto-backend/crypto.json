@@ -3,80 +3,93 @@
     "name":"Bitcoin",
     "quantity": 1000,
     "price": 1,
-    "old_price":0.99,
+    "old_price": 0.99,
+    "wallet": 1000,
     "info":"The most famous one",
     "archived_data": [
         {
             "id": 0,
             "name": "jan",
             "sold": 575,
-            "bought": 309
+            "bought": 309,
+            "wallet": 734
         },
         {
             "id": 1,
             "name": "feb",
             "sold": 20,
-            "bought": 345
+            "bought": 345,
+            "wallet": 1059
         },
         {
             "id": 2,
             "name": "mar",
             "sold": 235,
-            "bought": 93
+            "bought": 93,
+            "wallet": 917
         },
         {
             "id": 3,
             "name": "apr",
             "sold": 715,
-            "bought": 990
+            "bought": 990,
+            "wallet": 1192
         },
         {
             "id": 4,
             "name": "may",
             "sold": 823,
-            "bought": 312
+            "bought": 312,
+            "wallet": 681
         },
         {
             "id": 5,
             "name": "jun",
             "sold": 456,
-            "bought": 894
+            "bought": 894,
+            "wallet": 1119
         },
         {
             "id": 6,
             "name": "jul",
             "sold": 220,
-            "bought": 692
+            "bought": 692,
+            "wallet": 1591
         },
         {
             "id": 7,
             "name": "aug",
             "sold": 150,
-            "bought": 90
+            "bought": 90,
+            "wallet": 1531
         },
         {
             "id": 8,
             "name": "sep",
             "sold": 257,
-            "bought": 816
+            "bought": 816,
+            "wallet": 2090
         },
         {
             "id": 9,
             "name": "oct",
             "sold": 98,
-            "bought": 239
+            "bought": 239,
+            "wallet": 2231
         },
         {
             "id": 10,
             "name": "nov",
             "sold": 76,
-            "bought": 302
+            "bought": 302,
+            "wallet": 2457
         },
         {
             "id": 11,
             "name": "dec",
             "sold": 581,
-            "bought": 869
+            "bought": 869,
+            "wallet": 2745
         }
     ]
 }

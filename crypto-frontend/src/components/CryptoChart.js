@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class CryptoChart extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.toggleDataSeries = this.toggleDataSeries.bind(this);
     }
 
@@ -18,21 +18,7 @@ class CryptoChart extends Component {
             theme: "light2",
             animationEnabled: true,
             axisX: {
-                title: "States"
-            },
-            axisY: {
-                title: "Sold",
-                titleFontColor: "#007bff",
-                lineColor: "#007bff",
-                labelFontColor: "#007bff",
-                tickColor: "#007bff"
-            },
-            axisY2: {
-                title: "Bought",
-                titleFontColor: "#51CDA0",
-                lineColor: "#51CDA0",
-                labelFontColor: "#51CDA0",
-                tickColor: "#51CDA0"
+                title: "Months"
             },
             toolTip: {
                 shared: true
@@ -65,7 +51,6 @@ class CryptoChart extends Component {
                 {
                     type: "spline",
                     name: "Bought",
-                    axisYType: "secondary",
                     showInLegend: true,
                     xValueFormatString: "MMM YYYY",
                     yValueFormatString: "#,##0.#",
@@ -83,7 +68,29 @@ class CryptoChart extends Component {
                         { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].bought },
                         { x: new Date(2020, 11, 1), y: this.props.crypto.quantity },
                     ]
-                }]
+                },
+                {
+                    type: "spline",
+                    name: "Wallet",
+                    showInLegend: true,
+                    xValueFormatString: "MMM YYYY",
+                    yValueFormatString: "#,##0.#",
+                    dataPoints: [
+                        { x: new Date(2020, 0, 1), y: this.props.crypto.archived_data[0].wallet },
+                        { x: new Date(2020, 1, 1), y: this.props.crypto.archived_data[1].wallet },
+                        { x: new Date(2020, 2, 1), y: this.props.crypto.archived_data[2].wallet },
+                        { x: new Date(2020, 3, 1), y: this.props.crypto.archived_data[3].wallet },
+                        { x: new Date(2020, 4, 1), y: this.props.crypto.archived_data[4].wallet },
+                        { x: new Date(2020, 5, 1), y: this.props.crypto.archived_data[5].wallet },
+                        { x: new Date(2020, 6, 1), y: this.props.crypto.archived_data[6].wallet },
+                        { x: new Date(2020, 7, 1), y: this.props.crypto.archived_data[7].wallet },
+                        { x: new Date(2020, 8, 1), y: this.props.crypto.archived_data[8].wallet },
+                        { x: new Date(2020, 9, 1), y: this.props.crypto.archived_data[9].wallet },
+                        { x: new Date(2020, 10, 1), y: this.props.crypto.archived_data[10].wallet },
+                        { x: new Date(2020, 11, 1), y: this.props.crypto.wallet },
+                    ]
+                }
+            ]
         }
 
 

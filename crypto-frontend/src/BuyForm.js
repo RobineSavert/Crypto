@@ -7,7 +7,8 @@ class BuyForm extends Component {
         super(props);
 
         this.state = {
-            quantity: 0
+            quantity: 0,
+            wallet: 0
         };
     }
 
@@ -15,12 +16,13 @@ class BuyForm extends Component {
         const { value } = event.target;
 
         this.setState({
-            quantity: value
+            quantity: value,
+            wallet: value
         });
     }
 
     handleClick = () => {
-        this.props.handleSubmit(this.state.quantity)
+        this.props.handleSubmit(this.state.quantity, this.state.wallet)
     }
 
     render() {

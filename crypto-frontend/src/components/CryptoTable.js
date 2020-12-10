@@ -8,6 +8,7 @@ const TableHeader = () => (
         <th>Quantity</th>
         <th>Price</th>
         <th>Old Price</th>
+        <th>Wallet</th>
     </tr>
     </thead>
 );
@@ -19,6 +20,7 @@ const TableBody = ({ crypto = {} }) => (
             <td>{crypto.quantity}</td>
             <td>{crypto.price}</td>
             <td>{crypto.old_price}</td>
+            <td>{crypto.wallet}</td>
         </tr>
     </tbody>
 );

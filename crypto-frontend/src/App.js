@@ -18,22 +18,26 @@ class App extends Component {
         };
     }
 
-    handleSubmitBuy = (quantity) => {
+    handleSubmitBuy = (quantity, wallet) => {
         const newQuantity = this.state.crypto.quantity + parseInt(quantity);
+        const newWallet = this.state.crypto.wallet + parseInt(wallet);
         this.setState({
             crypto: {
                 ...this.state.crypto,
-                quantity: newQuantity
+                quantity: newQuantity,
+                wallet: newWallet
             }
         })
     };
 
-    handleSubmitSell = (quantity) => {
+    handleSubmitSell = (quantity, wallet) => {
         const newQuantity = this.state.crypto.quantity - parseInt(quantity);
+        const newWallet = this.state.crypto.wallet - parseInt(wallet);
         this.setState({
             crypto: {
                 ...this.state.crypto,
-                quantity: newQuantity
+                quantity: newQuantity,
+                wallet: newWallet
             }
         })
     };
